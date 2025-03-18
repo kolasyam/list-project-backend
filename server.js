@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { errorHandler } = require("./Middleware/errorMiddleware");
-// const agentsRoutes = require("./routes/adminRoutes");
 require("dotenv").config();
 require("./config/db");
 const PORT = process.env.PORT || 8000;

@@ -5,7 +5,13 @@ const {
   loginAdmin,
   getAdminProfile,
   logoutAdmin,
-} = require("../controllers/adminController");
+} = require("../Controllers/adminController");
+// const {
+//   registerAdmin,
+//   loginAdmin,
+//   getAdminProfile,
+//   logoutAdmin,
+// } = require("../controllers/adminController");
 // const { protect } = require("../middleware/authMiddleware");
 const { protect } = require("../Middleware/authMiddleware");
 

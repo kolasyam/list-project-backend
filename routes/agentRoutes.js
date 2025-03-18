@@ -6,7 +6,7 @@ const {
   getAgentById,
   updateAgent,
   deleteAgent,
-} = require("../controllers/agentController");
+} = require("../Controllers/agentController");
 const { protect } = require("../Middleware/authMiddleware");
 // const { protect } = require("../middleware/authMiddleware");
 

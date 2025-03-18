@@ -4,7 +4,7 @@ const {
   uploadList,
   getLists,
   // getListById,
-} = require("../controllers/listController");
+} = require("../Controllers/listController");
 // const { protect } = require("../middleware/authMiddleware");
 const { protect } = require("../Middleware/authMiddleware");
 
