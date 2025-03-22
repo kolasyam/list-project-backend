@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const AgentSchema = new mongoose.Schema({
+const SubAgentSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "Please add a name"],
@@ -33,8 +33,8 @@ const AgentSchema = new mongoose.Schema({
     select: false,
   },
   createdBy: {
-    type: String,
-    // ref: "Admin", // Reference to the Admin model
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Agent",
     required: true,
   },
   createdAt: {
@@ -44,7 +44,7 @@ const AgentSchema = new mongoose.Schema({
 });
 
 // Encrypt password using bcrypt
-AgentSchema.pre("save", async function (next) {
+SubAgentSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
   }
@@ -53,4 +53,4 @@ AgentSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, salt);
 });
 
-module.exports = mongoose.model("Agent", AgentSchema);
+module.exports = mongoose.model("SubAgent", SubAgentSchema);
